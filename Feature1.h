@@ -2,6 +2,6 @@
 #define FEATURE1_H
 
 void initFeature1();
-// Declaration of additional functions for Feature1
+void getFeatureDescription(char *featureNumber, char *desc);
 
 #endif
