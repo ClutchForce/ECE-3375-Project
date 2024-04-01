@@ -29,16 +29,16 @@ int main(void) {
     logFeatureResponsibility(featureDesc);
     
     // Main game loop
-    // while (1) {
-    //     // Check for player input and process it
-    //     processInput();
+    while (1) {
+        // Check for player input and process it
+        processInput();
         
-    //     // Update the game state based on input
-    //     updateGameState();
+        // Update the game state based on input
+        updateGameState();
         
-    //     // Provide feedback to the player
-    //     provideFeedback();
-    // }
+        // Provide feedback to the player
+        provideFeedback();
+     }
     
     return 0;
 }
