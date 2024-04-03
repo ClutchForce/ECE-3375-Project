@@ -26,6 +26,8 @@
 
 bool Display(int time, const char* command);
 void DisplayHex(const char* command);
+void clearDisplay();
+void play_audio(int index);
 
 //audio data
 #if DEMO
@@ -50,10 +52,11 @@ bool game_running = true;
 int main() {
     *channel_1 = 1;
 
-    const char* cmds[] = {"Bop", "Twist", "Pull"};
+        const char* cmds[] = {"Bop", "Twist", "Pull"};
+	//const char* cmds[] = { "Twist", "Bop", "Twist"};
     
 	const int numCmds = sizeof(cmds) / sizeof(cmds[0]);
-    const int seqLength = 3; 
+    const int seqLength = 4; 
     
 	char* randomSeq[seqLength];
 
@@ -115,7 +118,7 @@ typedef struct _interval_timer
 volatile interval_timer* const timer = (interval_timer*)TIMER_BASE;
 
 void initialize_timer(int seconds) {
-    int ticks = 200000000; // clock rate depending
+    int ticks = 16000000; // clock rate depending
     
     timer->control = 0;
     timer->low_period = ticks & 0xFFFF;
@@ -136,11 +139,11 @@ uint32_t readPotentiometer() {
     volatile uint32_t *adc = channel_0;
     uint32_t adc_value = *adc; 
 
-    while (!(adc_value & (1 << 16))) {	
+    while (!(adc_value & (1 << 15))) {	
         adc_value = *adc;
     }
 
-    if ((adc_value & 0xFFF) > 0){
+    if ((adc_value & 0xFFF) > 10){
         return 1;
     }
     else{
@@ -181,7 +184,7 @@ bool Display(int duration, const char* command) {
     int elapsed_seconds = 0;
     initialize_timer(duration);
 
-    while (elapsed_seconds < duration) {
+    while (elapsed_seconds < (duration*10)) {
         if (time_has_elapsed()) {
             elapsed_seconds++;
         }
@@ -193,7 +196,7 @@ bool Display(int duration, const char* command) {
                 return true;
             }
         } else if (strcmp(command, "Twist") == 0) {
-            if (readPotentiometer() > 0) {
+            if (readPotentiometer() == 1) {
                 return true; 
             }
         } else if (strcmp(command, "Pull") == 0) { 
