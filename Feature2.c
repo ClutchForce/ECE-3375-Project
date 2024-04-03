@@ -7,8 +7,8 @@ void initFeature2() {
     // Initialize game logic and set initial difficulty level
 }
 
-void getFeatureDescription(char *featureNumber, char *desc) {
-    sprintf(desc, "Feature %s is responsible for handling player input.", featureNumber);
+void getFeature2Description(char *featureNumber, char *desc) {
+    sprintf(desc, "Feature %s is responsible for Game Logic and Difficulty Levels.", featureNumber);
 }
 
 // Additional functions for managing game state and difficulty levels

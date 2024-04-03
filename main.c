@@ -1,5 +1,6 @@
 //main.c
-
+//Cmd to compile files
+//gcc main.c Feature1.c Feature2.c Feature3.c -o main
 #include <stdio.h>
 #include <stdint.h>
 
@@ -19,13 +20,13 @@ int main(void) {
     //Testing connectivity 
     char featureDesc[100]; // Buffer for feature descriptions
     
-    getFeatureDescription("1", featureDesc);
+    getFeature1Description("1", featureDesc);
     logFeatureResponsibility(featureDesc);
     
-    getFeatureDescription("2", featureDesc);
+    getFeature2Description("2", featureDesc);
     logFeatureResponsibility(featureDesc);
     
-    getFeatureDescription("3", featureDesc);
+    getFeature3Description("3", featureDesc);
     logFeatureResponsibility(featureDesc);
     
     // Main game loop

@@ -7,8 +7,8 @@ void initFeature3() {
     // Initialize hardware and variables for audio feedback
 }
 
-void getFeatureDescription(char *featureNumber, char *desc) {
-    sprintf(desc, "Feature %s is responsible for handling player input.", featureNumber);
+void getFeature3Description(char *featureNumber, char *desc) {
+    sprintf(desc, "Feature %s is responsible for Audio Feedback and Communication.", featureNumber);
 }
 
 // Additional functions for playing sound feedback and messages

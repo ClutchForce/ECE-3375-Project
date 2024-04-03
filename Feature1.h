@@ -2,6 +2,6 @@
 #define FEATURE1_H
 
 void initFeature1();
-void getFeatureDescription(char *featureNumber, char *desc);
+void getFeature1Description(char *featureNumber, char *desc);
 
 #endif

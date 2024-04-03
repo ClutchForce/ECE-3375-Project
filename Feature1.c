@@ -7,7 +7,7 @@ void initFeature1() {
     // Initialize hardware and variables for player input handling
 }
 
-void getFeatureDescription(char *featureNumber, char *desc) {
+void getFeature1Description(char *featureNumber, char *desc) {
     sprintf(desc, "Feature %s is responsible for handling player input.", featureNumber);
 }
 
