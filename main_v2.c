@@ -52,8 +52,7 @@ bool game_running = true;
 int main() {
     *channel_1 = 1;
 
-        const char* cmds[] = {"Bop", "Twist", "Pull"};
-	//const char* cmds[] = { "Twist", "Bop", "Twist"};
+    const char* cmds[] = {"Bop", "Twist", "Pull"};
     
 	const int numCmds = sizeof(cmds) / sizeof(cmds[0]);
     const int seqLength = 4; 
